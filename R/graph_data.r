@@ -65,7 +65,7 @@ as_generic_graph.igraph <- function(graph) {
     undirected = FALSE, # For now we will assume it is undirected
     multiple   = FALSE, # And !multiple
     class      = "igraph"
-    ))
+  ))
   add_to_generic_graph("ans", "meta", meta, env)
 
   return(ans)
@@ -96,7 +96,7 @@ as_generic_graph.network <- function(graph) {
     undirected = !network::is.directed(graph),
     multiple   = network::is.multiplex(graph),
     self       = network::has.loops(graph)
-    )
+  )
 
   ord <- network::network.vertex.names(graph)
   ord <-  match(ord, rownames(adjmat))
@@ -221,7 +221,7 @@ classify_graph <- function(graph) {
 
       # Step 4.2.1: Must keep uniqueness
       if (length(unique(pers)) != t) stop("When coercing names(graph) into integer,",
-                                       "some slices acquired the same name.")
+                                          "some slices acquired the same name.")
     }
 
     return(invisible(list(
